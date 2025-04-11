@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Detox Tracker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <!-- Header -->
+  <header class="header">
+   <div class="container text-center">
+    <h1>Digital Detox Tracker</h1>
+    <p>Reclaim Your Time, Reclaim Your Life.</p>
+    <button id="darkModeToggle" class="btn btn-outline-light"><i class="fas fa-moon"></i> Dark Mode</button>
+   </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+   <!-- Screen Time Monitoring Section -->
+   <section id="screenTime" class="card neumorphic">
+    <h2>Screen Time Monitoring</h2>
+    <div class="row">
+     <div class="col-md-6">
+      <form id="screenTimeForm">
+       <div class="form-group">
+        <label for="appSelect">App:</label>
+        <select class="form-control" id="appSelect" name="app">
+         <option value="facebook">Facebook</option>
+         <option value="instagram">Instagram</option>
+         <option value="twitter">Twitter</option>
+         <option value="youtube">YouTube</option>
+         <option value="tiktok">TikTok</option>
+         <option value="other">Other</option>
+        </select>
+       </div>
+       <div class="form-group">
+        <label for="timeSpent">Time Spent (minutes):</label>
+        <input type="number" class="form-control" id="timeSpent" name="timeSpent" required>
+        <div class="invalid-feedback">Please enter a valid time.</div>
+       </div>
+       <div class="form-group">
+        <label for="limitTime">Set Limit Time(minutes):</label>
+        <input type="number" class="form-control" id="limitTime" name="limitTime" required>
+        <div class="invalid-feedback">Please enter a valid time.</div>
+       </div>
+       <button type="submit" class="btn btn-primary">Add Time</button>
+       <button type="button" class="btn btn-secondary" id="clearForm">Clear Form</button>
+      </form>
+     </div>
+     <div class="col-md-6">
+      <h3>Daily Usage Log</h3>
+      <ul id="usageLog" class="list-group">
+      </ul>
+     </div>
+    </div>
+   </section>
+
+   <!-- Personalized Goals Section -->
+   <section id="goals" class="card neumorphic">
+    <h2>Personalized Goals</h2>
+    <ul id="goalList" class="list-group">
+     <li class="list-group-item">Reduce social media time by 30 minutes. <button class="btn btn-sm btn-danger removeGoal"><i
+         class="fas fa-trash"></i></button></li>
+     <li class="list-group-item">Read for 20 minutes each day. <button class="btn btn-sm btn-danger removeGoal"><i
+         class="fas fa-trash"></i></button></li>
+    </ul>
+    <div class="input-group mt-3">
+     <input type="text" id="newGoal" class="form-control" placeholder="Add a new goal">
+     <div class="input-group-append">
+      <button class="btn btn-success" type="button" id="addGoalBtn">Add Goal</button>
+     </div>
+    </div>
+   </section>
+   <!-- Book Suggestion Section -->
+   <section id="bookSuggestion" class="card neumorphic">
+    <h2>Book Suggestion</h2>
+    <div id="bookDetails">
+     <h3 id="bookTitle">Loading...</h3>
+     <p id="bookAuthor"></p>
+     <p id="bookDescription"></p>
+     <img id="bookCover" src="" alt="Book Cover" style="max-width: 200px;">
+     <button class="btn btn-info" id="refreshBook">Refresh Suggestion</button>
+    </div>
+   </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-5 py-3 bg-light text-center">
+   <div class="container">
+    <span class="text-muted">&copy; 2024 Digital Detox Tracker</span>
+   </div>
+  </footer>
+  <!-- Notification Element -->
+  <div id="notification" class="notification">
+   <span id="notificationMessage"></span>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ </html>

@@ -1,0 +1,197 @@
+/* style.css */
+ :root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --card-bg: #ecf0f3;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: #fff;
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ffe66d;
+ }
+ 
+
+ [data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #2c2c2c;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --highlight-color: #333;
+  --primary-color: #f9a825;
+  --secondary-color: #80cbc4;
+  --accent-color: #f0f4c3;
+ }
+ 
+
+ body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+ }
+ 
+
+ .header {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+ }
+ 
+
+ .header h1 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+ }
+ 
+
+ .container {
+  max-width: 960px;
+ }
+ 
+
+ .neumorphic {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: -7px -7px 10px var(--highlight-color),
+   7px 7px 10px var(--shadow-color);
+  transition: all 0.3s ease;
+ }
+ 
+
+ .neumorphic:hover {
+  box-shadow: -5px -5px 8px var(--highlight-color),
+   5px 5px 8px var(--shadow-color);
+ }
+ 
+
+ /* Form Styling */
+ .form-control {
+  background-color: var(--card-bg);
+  border: none;
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: inset -2px -2px 5px var(--highlight-color),
+   inset 2px 2px 5px var(--shadow-color);
+  transition: all 0.3s ease;
+ }
+ 
+
+ .form-control:focus {
+  outline: none;
+  box-shadow: inset -3px -3px 6px var(--highlight-color),
+   inset 3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ .btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ 
+
+ .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: -3px -3px 6px var(--highlight-color),
+   3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: -4px -4px 7px var(--highlight-color),
+   4px 4px 7px var(--shadow-color);
+ }
+ 
+
+ .btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: -3px -3px 6px var(--highlight-color),
+   3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: -4px -4px 7px var(--highlight-color),
+   4px 4px 7px var(--shadow-color);
+ }
+ 
+
+ .list-group-item {
+  background-color: var(--card-bg);
+  border: none;
+  color: var(--text-color);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: -2px -2px 5px var(--highlight-color),
+   2px 2px 5px var(--shadow-color);
+  transition: all 0.3s ease;
+ }
+ 
+
+ .list-group-item:hover {
+  box-shadow: -3px -3px 6px var(--highlight-color),
+   3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ .removeGoal {
+  float: right;
+ }
+ 
+
+ .footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: -3px -3px 6px var(--highlight-color),
+   3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ #darkModeToggle {
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: -3px -3px 6px var(--highlight-color),
+   3px 3px 6px var(--shadow-color);
+ }
+ 
+
+ #darkModeToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: -4px -4px 7px var(--highlight-color),
+   4px 4px 7px var(--shadow-color);
+ }
+ 
+
+ .notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+ }
+ 
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+  .container {
+   padding: 0 15px;
+  }
+ 
+
+  .neumorphic {
+   padding: 15px;
+  }
+ }
