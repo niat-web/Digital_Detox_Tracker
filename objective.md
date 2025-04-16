@@ -4,7 +4,7 @@
 This project is a Digital Detox Tracker designed to help users monitor and manage their screen time and set personal goals for reducing digital consumption. It features a dark/light mode toggle, a form to log screen time usage, a personalized goal list, and a book suggestion feature fetched from an external API. The application is built using HTML, CSS, and JavaScript.
 
 ## Output
-<iframe src="https://niat-web.github.io/Digital_Detox_Tracker" height="1000" width="300" title="Digital_Detox_Tracker"></iframe>
+<iframe src="https://niat-web.github.io/Digital_Detox_Tracker/" height="1000" width="300" title="Digital_Detox_Tracker"></iframe>
 
 ## Project Requirements
 **Technologies:** HTML, CSS, JavaScript

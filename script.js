@@ -124,7 +124,7 @@
     const proxyUrl = `https://api.allorigins.win/raw?url=${apiUrl}`;
     const proxyResponse = await fetch(proxyUrl);
     if (proxyResponse.ok) {
-     data = JSON.parse(proxyResponse); // Parse string data manually
+     data = await proxyResponse.json(); // Parse string data manually
     } else {
      data = null;
     }
@@ -136,19 +136,19 @@
   }
  
 
-  if (data && data.length > 0) {
-   const suffledData = data.sort(() => Math.random() - 0.5);
-   const book = suffledData[0];
-   bookTitle.textContent = book.title;
-   bookAuthor.textContent = `By ${book.author}`;
-   bookDescription.textContent = book.description;
-   bookCover.src = book.cover_image;
-   bookCover.alt = book.title;
-  } else {
-   bookTitle.textContent = 'Failed to load book suggestion.';
-  }
- }
- 
+
+  if (data && Array.isArray(data) && data.length > 0) {
+    const suffledData = data.sort(() => Math.random() - 0.5);
+    const book = suffledData[0];
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = `By ${book.author}`;
+    bookDescription.textContent = book.description;
+    bookCover.src = book.cover_image;
+    bookCover.alt = book.title;
+} else {
+    bookTitle.textContent = 'Failed to load book suggestion.';
+}
+}
 
  fetchBookSuggestion(); // Initial load
  
